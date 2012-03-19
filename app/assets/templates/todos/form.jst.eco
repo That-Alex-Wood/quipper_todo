@@ -1,0 +1,7 @@
+<form id="inline_new_todo" class='form-inline span8'>
+    <label class='control-label' for='name'>description</label>
+    <input type="text" name="name" id="inline_new_todo_name" value="<%= @todo.get('name') %>">
+    <label class='control-label' for='deadline'>dead line</label>
+    <input type="text" name="deadline" id="inline_new_todo_deadline" value="<%= @todo.get('deadline') %>">
+    <input type="submit" value="update">
+</form>

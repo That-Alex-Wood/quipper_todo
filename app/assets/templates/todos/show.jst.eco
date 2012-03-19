@@ -1,0 +1,15 @@
+<div class="todo_attributes span8">
+    <div id="todo_name" class="span1"><%= @todo.get('name') %></div>
+    <div id="todo_deadline" class="span1"><%= @todo.get('deadline') %></div>
+    <div class="span1">
+      <% if @todo.get('done'): %>
+        <input type="checkbox" checked="checked" id='is_done'/>
+      <% else: %>
+        <input type="checkbox" id='is_done'/>
+      <% end %>
+    </div>
+</div>
+<div class="span2 btn-group">
+    <button id="todo_edit" class="btn btn-mini btn-warning">edit</button>
+    <button id="todo_delete" class="btn btn-mini btn-danger">delete</button>
+</div>

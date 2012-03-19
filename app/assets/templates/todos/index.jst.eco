@@ -1,0 +1,13 @@
+<h1>Listing todos</h1>
+
+<form id="new_todo" class='form-inline'>
+    <label>description</label><input type="text" name="name" id="new_todo_name">
+    <label>dead line</label><input type="text" name="deadline" id="new_todo_deadline">
+    <input type="submit" value="Add">
+</form>
+<div id="errors"/>
+
+<div class="span1">Task</div>
+<div class="span1">Due date</div>
+<div class="span1">completed</div>
+<div id="todos"/>

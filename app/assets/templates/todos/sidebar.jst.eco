@@ -1,0 +1,7 @@
+<ul class='nav nav-list'>
+    <li class='nav-header' >Filter</li>
+    <li><a href="/todos/search/late">late</a></li>
+    <li><a href="/todos/search/uncompleted">uncompleted</a></li>
+    <li><a href="/">reset filters</a></li>
+</ul>
+
