@@ -7,7 +7,8 @@
 </form>
 <div id="errors"/>
 
-<div class="span1">Task</div>
-<div class="span1">Due date</div>
-<div class="span1">completed</div>
+<div class="span1"><h6>Task</h6></div>
+<div class="span1"><h6>Due date</h6></div>
+<div class="span1"><h6>Completed</h6></div>
+<div class="span2"><h6>Created at</h6></div>
 <div id="todos"/>

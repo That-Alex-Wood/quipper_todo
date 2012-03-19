@@ -10,7 +10,12 @@ class QuipperTodo.Views.TodosShow extends Backbone.View
       'change #is_done' : 'todoChanged'
       'click #todo_edit': "todoEdit"
       'click #todo_delete': "todoDelete"
-
+      'click #todo_tweet': "todoTweet"
+      
+    todoTweet: (event) ->
+      console.log(event)
+      new QuipperTodo.Models.Twit({text: @model.get('name') }).save()
+      
     todoChanged: (event) ->
       if @.$(':checkbox').attr('checked') == 'checked'
         @model.set(done: true)

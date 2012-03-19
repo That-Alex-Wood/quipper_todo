@@ -8,8 +8,10 @@
         <input type="checkbox" id='is_done'/>
       <% end %>
     </div>
+    <div id="todo_created_at" class="span2"><%= @todo.get('created_at') %></div>
 </div>
 <div class="span2 btn-group">
     <button id="todo_edit" class="btn btn-mini btn-warning">edit</button>
     <button id="todo_delete" class="btn btn-mini btn-danger">delete</button>
+    <button id="todo_tweet" class="btn btn-mini btn-primary">tweet!</button>
 </div>

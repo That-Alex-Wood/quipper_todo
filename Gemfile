@@ -25,6 +25,7 @@ gem 'jquery-rails'
 gem 'backbone-on-rails'
 gem 'rails3-generators'
 gem 'haml-rails'
+gem "twitter"
 group :test do
   gem 'rspec'
   gem 'rspec-rails'

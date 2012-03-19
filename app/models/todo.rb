@@ -6,8 +6,8 @@ class Todo
   key :done, Boolean, :default => false
   timestamps!
   
-  scope :late, lambda { sort(:name).where(:deadline => { '$lt' => Time.now}, :done => false) }
-  scope :uncompleted, sort(:name).where(:done => false)
+  scope :late, lambda { sort(:created_at).where(:deadline => { '$lt' => Time.now}, :done => false) }
+  scope :uncompleted, sort(:created_at).where(:done => false)
   
   validates_presence_of :name
   validates_presence_of :deadline
