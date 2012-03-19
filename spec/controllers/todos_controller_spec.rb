@@ -16,20 +16,16 @@ describe TodosController do
     
     it "should setup the correct options for the _late_ filter" do
       Timecop.freeze(Time.now) do
-        Todo.should_receive(:sort).with(:name).and_return(Todo)
-        Todo.should_receive(:where).with({:deadline => { '$lt' => Time.now}, :done => false}).and_return(Todo)
+        Todo.should_receive(:late).and_return(Todo)
         get :index, :filter_type  => :late, :format => :json
         response.should be_success
       end
     end
     
     it "should setup the correct options for the _uncompleted_ filter" do
-      Timecop.freeze(Time.now) do
-        Todo.should_receive(:sort).with(:name).and_return(Todo)
-        Todo.should_receive(:where).with({:done => false}).and_return(Todo)
-        get :index, :filter_type  => :uncompleted, :format => :json
-        response.should be_success
-      end
+      Todo.should_receive(:uncompleted).and_return(Todo)
+      get :index, :filter_type  => :uncompleted, :format => :json
+      response.should be_success
     end
     
   end
