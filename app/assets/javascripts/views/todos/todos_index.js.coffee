@@ -7,9 +7,10 @@ class QuipperTodo.Views.TodosIndex extends Backbone.View
     @collection.on('reset', @render, this)
     @collection.on('add', @appendTodo, this)
     @collection.on('change', @render, this)
+
   events:
     'submit #new_todo': 'newTodo'
-
+    
   newTodo: (event) ->
     event.preventDefault()
     @.$('#errors').html('')
@@ -22,7 +23,7 @@ class QuipperTodo.Views.TodosIndex extends Backbone.View
 
   appendTodo: (todo) ->
     view = new QuipperTodo.Views.TodosShow(model: todo)
-    @.$('#todos').append(view.render().el)
+    @.$('#todos table tbody').append(view.render().el)
     this
 
   handleError: (todo, response) ->

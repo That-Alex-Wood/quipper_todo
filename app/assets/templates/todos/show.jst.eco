@@ -1,17 +1,15 @@
-<div class="todo_attributes span8">
-    <div id="todo_name" class="span1"><%= @todo.get('name') %></div>
-    <div id="todo_deadline" class="span1"><%= @todo.get('deadline') %></div>
-    <div class="span1">
-      <% if @todo.get('done'): %>
-        <input type="checkbox" checked="checked" id='is_done'/>
-      <% else: %>
-        <input type="checkbox" id='is_done'/>
-      <% end %>
+<td class='todo_name'><%= @todo.get('name') %></td>
+<td class='todo_deadline'><%= @todo.get('deadline') %></td>
+<% if @todo.get('done'): %>
+  <td><input type="checkbox" checked="checked" id='is_done'/></td>
+<% else: %>
+  <td><input type="checkbox" id='is_done'/></td>
+<% end %>
+<td><%= @todo.get('created_at') %></td>
+<td>
+    <div class="btn-group">
+        <button id="todo_edit" class="btn btn-mini btn-warning">edit</button>
+        <button id="todo_delete" class="btn btn-mini btn-danger">delete</button>
+        <button id="todo_tweet" class="btn btn-mini btn-primary">tweet!</button>
     </div>
-    <div id="todo_created_at" class="span2"><%= @todo.get('created_at') %></div>
-</div>
-<div class="span2 btn-group">
-    <button id="todo_edit" class="btn btn-mini btn-warning">edit</button>
-    <button id="todo_delete" class="btn btn-mini btn-danger">delete</button>
-    <button id="todo_tweet" class="btn btn-mini btn-primary">tweet!</button>
-</div>
+</td>

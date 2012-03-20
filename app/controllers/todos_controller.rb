@@ -8,7 +8,7 @@ class TodosController < ApplicationController
 
   def create
     todo_attributes = params[:todo]
-    todo_attributes[:deadline] = Time.parse(params[:todo][:deadline])
+    todo_attributes[:deadline] = Time.parse(params[:todo][:deadline]) if params[:todo][:deadline].present?
     @todo = Todo.new(todo_attributes)
     respond_to do |format|
       if @todo.save

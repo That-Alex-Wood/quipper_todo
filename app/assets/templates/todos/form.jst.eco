@@ -1,7 +1,15 @@
-<form id="inline_new_todo" class='form-inline span8'>
-    <label class='control-label' for='name'>description</label>
-    <input type="text" name="name" id="inline_new_todo_name" value="<%= @todo.get('name') %>">
-    <label class='control-label' for='deadline'>dead line</label>
-    <input type="text" name="deadline" id="inline_new_todo_deadline" value="<%= @todo.get('deadline') %>">
-    <input type="submit" value="update">
-</form>
+<td class='todo_name'><input type='text' value="<%= @todo.get('name') %>"/></td>
+<td class='todo_deadline'><input type='text' value='<%= @todo.get('deadline') %>'/></td>
+<% if @todo.get('done'): %>
+  <td><input type="checkbox" checked="checked" id='is_done'/></td>
+<% else: %>
+  <td><input type="checkbox" id='is_done'/></td>
+<% end %>
+<td><%= @todo.get('created_at') %></td>
+<td>
+    <div class="btn-group">
+        <button id="todo_save" class="btn btn-mini btn-success">save</button>
+        <button id="todo_delete" class="btn btn-mini btn-danger">delete</button>
+        <button id="todo_tweet" class="btn btn-mini btn-primary">tweet!</button>
+    </div>
+</td>

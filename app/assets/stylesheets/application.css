@@ -12,3 +12,8 @@
  *= require_self
  *= require_tree .
 */
+
+#todos .todo_attributes.hover_rover {
+  background-color: #EEE;
+  cursor: pointer;
+}

@@ -6,6 +6,7 @@ window.QuipperTodo =
   init: ->
     QuipperTodo.todos_router = new QuipperTodo.Routers.Todos()
     Backbone.history.start()
+      
 
 $(document).ready ->
   QuipperTodo.init()

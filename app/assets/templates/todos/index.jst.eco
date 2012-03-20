@@ -1,14 +1,27 @@
 <h1>Listing todos</h1>
 
-<form id="new_todo" class='form-inline'>
-    <label>description</label><input type="text" name="name" id="new_todo_name">
-    <label>dead line</label><input type="text" name="deadline" id="new_todo_deadline">
-    <input type="submit" value="Add">
+<form id="new_todo" class='well form-inline'>
+    <label class='control-label' for="name">Description</label>
+    <input type="text" name="name" id="new_todo_name">
+    <label class='control-label' for="deadline">Deadline</label>
+    <input type="text" name="deadline" id="new_todo_deadline">
+    <input type="submit" value="Add" class='btn'>
 </form>
 <div id="errors"/>
 
-<div class="span1"><h6>Task</h6></div>
-<div class="span1"><h6>Due date</h6></div>
-<div class="span1"><h6>Completed</h6></div>
-<div class="span2"><h6>Created at</h6></div>
-<div id="todos"/>
+<div id="todos">
+    <table class="table table-striped table-condensed table-bordered">
+        <thead>
+            <tr>
+                <th class="dropdown-toggle span2" data-toggle='dropdown' data-sort_col='name' data-sort_dir='asc'>Task</div></th>
+                <th data-sort_col='deadline' data-sort_dir='asc'>Due date</th>
+                <th data-sort_col='completed' data-sort_dir='asc'>Completed</th>
+                <th data-sort_col='created_at' data-sort_dir='asc'>Created at</th>
+                <th >Controles</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</div>

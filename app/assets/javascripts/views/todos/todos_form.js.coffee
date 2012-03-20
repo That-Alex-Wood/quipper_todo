@@ -1,18 +1,18 @@
 class QuipperTodo.Views.TodosForm extends Backbone.View
     template: JST['todos/form']
     className: 'edit_inline'
-
+    tagName: 'tr'
     initialize: ->
       @model = @options.model
       @model.on('change', @render, @)
 
     events:
-      'submit form#inline_new_todo': 'updateTodo'
+      'click #todo_save': 'saveTodo'
       
-    updateTodo: (event) ->
+    saveTodo: (event) ->
       event.preventDefault()
       @.$('#errors').html('')
-      attributes =  name: $('#inline_new_todo_name').val(), deadline: $('#inline_new_todo_deadline').val()
+      attributes =  name: @.$('.todo_name input').val(), deadline: @.$('.todo_deadline input').val()
       @model.save attributes,
         wait: true, 
         success: -> QuipperTodo.index_view.collection.trigger('reset')
@@ -26,5 +26,5 @@ class QuipperTodo.Views.TodosForm extends Backbone.View
 
     render: ->
       $(@el).html(@template(todo: @model))
-      @.$('#inline_new_todo_deadline').datepicker(dateFormat: "yy-mm-dd")
+      @.$('.todo_deadline input').datepicker(dateFormat: "yy-mm-dd")
       this
